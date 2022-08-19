@@ -1,12 +1,23 @@
+class Book{
+  constructor(title, author, pages){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
 
-function dizOla(){
-  return 'Oláááááá'
+  read(){
+    return `I'm reading ${this.title}`;
+  }
+
 }
 
-function soma(a,b){
-  return a + b
+class ItBook extends Book{
+  constructor(title, author,pages, technology){
+    super(title, author, pages);
+    this.technology = technology;
+  }
 }
 
-console.log(dizOla())
+let itBook = new ItBook('Algoritms to live by', 'Brian Christian', '620', 'Algoritms');
 
-console.log(soma(2,3))
+console.log(itBook.read());
