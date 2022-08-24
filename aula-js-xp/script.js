@@ -1,23 +1,29 @@
-class Book{
-  constructor(title, author, pages){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
+function fizzBuzz(entry){
+  if(typeof(entry) !== 'number'){
+    return 'It\'s not a number'
   }
-
-  read(){
-    return `I'm reading ${this.title}`;
-  }
-
-}
-
-class ItBook extends Book{
-  constructor(title, author,pages, technology){
-    super(title, author, pages);
-    this.technology = technology;
+  if ((entry % 3 === 0) && (entry % 5 === 0)){
+    return 'FizzBuzz'
+  } else if (entry % 3 === 0){
+    return 'Fizz'
+  } else if (entry % 5 === 0){
+    return 'Buzz'
+  }else {
+    return entry
   }
 }
 
-let itBook = new ItBook('Algoritms to live by', 'Brian Christian', '620', 'Algoritms');
+let result = fizzBuzz(31)
+console.log(result)
 
-console.log(itBook.read());
+let newStr = '';
+
+function reverseAString(str) {
+
+  for (let i = Number.parseInt(str.length - 1); i >= 0; i--) {
+    newStr += str[i]
+    console.log(newStr)
+  }
+}
+
+reverseAString('Hello')
