@@ -18,7 +18,7 @@
 
 <body>
     <h2>Sistema de Controle de Registros - CRUD</h2>
-    <form action="javascript:void(0);" method="POST" onsubmit="app.ADD()">
+    <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">
         <input type="text" id="add-name" placeholder="Digite um nome">
         <input type="submit" value="Adicionar">
     </form>
@@ -72,12 +72,23 @@
                         data += '</tr>';
                     }
                 }
-                
+
                 this.count(this.counters.length);
                 return this.el.innerHTML = data;
 
             }
+            
+            this.Add = function(){
+                el = document.getElementById('add-name');
 
+                var counter = el.value;
+                if (counter) {
+                    this.counters.push(counter.trim());
+                    el.value = ''
+                    this.fetchAll();
+                }
+
+            }
             
         }
 
