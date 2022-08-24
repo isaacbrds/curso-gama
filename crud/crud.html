@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Registros</title>
+
+    <style>
+        
+        #spoiler{
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Sistema de Controle de Registros - CRUD</h2>
+    <form action="javascript:void(0);" method="POST" onsubmit="app.ADD()">
+        <input type="text" id="add-name" placeholder="Digite um nome">
+        <input type="submit" value="Adicionar">
+    </form>
+
+    <div id="spoiler" role="aria-hidden">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Editar"><a onclick="closeInput" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table border="1">
+        <tr>
+            <th>Tabela de Registros</th>
+        </tr>
+        <tbody id="counters">
+            <tr>
+                <td>Jõao</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var app = new function () {
+            this.el = document.getElementById('counters');
+            this.counters = ['Jõao', 'Erica', 'Jose'];
+            this.count = function (data) {
+                var el = document.getElementById('counter');
+                var name = 'Registro';
+
+                if (data) {
+                    if (data > 1) {
+                        name = 'Registros';
+                    }
+                    el.innerHTML = data + ' ' + name;
+                } else {
+                    el.innerHTML = 'Nenhum ' + name;
+                }
+            }
+
+            this.fetchAll = function () {
+                var data = '';
+                if (this.counters.length > 0) {
+                    for (var i = 0; i < this.counters.length; i++) {
+                        data += '<tr>';
+                        data += '<td>' + this.counters[i] + '</td>'
+                        data += '<td><button onclick="app.Edit(' + i + ')">Editar</button></td>'
+                        data += '<td><button onclick="app.Delete(' + i + ')">Excluir</button></td>'
+                        data += '</tr>';
+                    }
+                }
+                
+                this.count(this.counters.length);
+                return this.el.innerHTML = data;
+
+            }
+
+            
+        }
+
+        app.fetchAll();
+    </script>
+</body>
+
+</html>
