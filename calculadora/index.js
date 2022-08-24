@@ -58,4 +58,20 @@ function historico(){
   let resultado = '';
   resultado += guardaHistorico[guardaHistorico.length - 1] + '<br>' + guardaHistorico[guardaHistorico.length - 2] + '<br>';
   document.getElementById('display').innerHTML = resultado;
+  salvar()
+}
+
+function salvar(){
+  let texto = ''
+
+  for (let i = 0; i < guardaHistorico.length; i++){
+    texto += guardaHistorico[i] + "\n";
+  }
+  
+  let blob = new Blob([texto],
+  {
+      type:"text/plain;charset=utf-8"
+
+  });
+  saveAs(blob,"financeiro.txt");
 }
