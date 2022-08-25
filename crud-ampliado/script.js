@@ -23,9 +23,10 @@ var app = new function () {
                 for(var j= 0; j < this.counters[i].length; j++){
                     data += '<td>' + this.counters[i][j] + '</td>'
                 }
-                data += '<td><button onclick="app.Edit(' + i + ')">Editar</button></td>'
-                data += '<td><button onclick="app.Delete(' + i + ')">Excluir</button></td>'
+                data += '<td><button onclick="app.Edit(' + i + ')">Editar &#x270D; </button></td>'
+                data += '<td><button onclick="app.Delete(' + i + ')">Excluir &#128465; </button></td>'
                 data += '</tr>';
+
             }
         }
 

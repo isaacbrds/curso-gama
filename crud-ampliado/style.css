@@ -10,6 +10,19 @@
 
 input[type=text]{
     width: 200px;
+    margin: 10px;
+}
+
+#gravarArquivo{
+    width: 350px;
+    color: red;
+}
+
+i{
+    color: black;
+}
+label{
+    margin: 100px;
 }
 
 table{
