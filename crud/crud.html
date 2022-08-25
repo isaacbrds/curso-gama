@@ -97,6 +97,20 @@
                 el.style = 'display: block';
                 input = document.getElementById('edit-name')
                 input.value = this.counters[indice];
+                self = this;
+                document.getElementById('saveEdit').onsubmit = function () {
+                    // Obter valor
+                    var counter = input.value;
+
+                    if (counter) {
+                        // Edita o valor
+                        self.counters.splice(indice, 1, counter.trim());
+                        // Exibe a nova lista
+                        self.fetchAll();
+                        //Ocultar campos
+                        self.closeInput();
+                    }
+                }
             }
 
             this.closeInput = function(){
@@ -104,6 +118,8 @@
                 el.style = 'display: none;';
                 input = document.getElementById('edit-name')
                 input.value = '';
+
+               
             }
 
             this.Delete = function(indice){
