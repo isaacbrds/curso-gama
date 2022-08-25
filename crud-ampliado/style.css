@@ -1,0 +1,17 @@
+#spoiler{
+    display: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.container{
+    text-align: center;
+}
+
+input[type=text]{
+    width: 200px;
+}
+
+table{
+    margin: auto;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Registros</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Sistema de Controle de Registros - CRUD</h2>
+        <h3>Estoque de Produtos Eletrônicos</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">
+            <label for="add-name"><strong>Produto </strong></label>
+            <label for="add-valor"><strong>Valor </strong></label>
+            <br>
+            <input type="text" id="add-name" placeholder="Digite o nome do produto">
+            
+            <input type="text" id="add-valor" placeholder="Digite o valor unitário"><br>
+            <label for="add-quantidade"><strong>Quantidade </strong></label><br>
+            <input type="text" id="add-quantidade" placeholder="Digite a quantidade de produtos">
+            <input type="submit" value="Adicionar">
+        </form>
+    
+        <div id="spoiler" role="aria-hidden">
+            <form action="javascript:void(0);" method="POST" id="saveEdit" >
+                <label for="edit-name"><strong>Produto </strong></label>
+                <label for="edit-valor"><strong>Valor </strong></label><br>
+                <input type="text" id="edit-name" placeholder="Digite o nome do produto">
+                <input type="text" id="edit-valor" placeholder="Digite o valor unitário"><br>
+                <label for="edit-quantidade"><strong>Quantidade </strong></label><br>
+                <input type="text" id="edit-quantidade" placeholder="Digite a quantidade de produtos">
+                <input type="submit" value="Editar"><a onclick="app.closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+    
+        <p id="counter"></p>
+    
+        <table border="0">
+            <tr>
+                <th colspan=6>Tabela de Registros</th>
+            </tr>
+            <tbody id="counters">
+                <tr>
+                    
+                </tr>
+            </tbody>
+        </table>
+    
+        <h3>Gravar os dados em um arquivo de Estoque.txt</h3>
+        <button onclick="app.gravarArquivo()">GRAVAR</button>    
+    </div>
+    
+    <script src="./script.js">
+        
+    </script>
+    <script type="text/javascript" src="./FileSaver.js"></script>
+</body>
+
+</html>
