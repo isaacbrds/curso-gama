@@ -11,6 +11,8 @@
         
         #spoiler{
             display: none;
+            cursor: pointer;
+            margin-top: 5px;
         }
 
     </style>
@@ -24,9 +26,9 @@
     </form>
 
     <div id="spoiler" role="aria-hidden">
-        <form action="javascript:void(0);" method="POST" id="saveEdit">
-            <input type="text" id="edit-name">
-            <input type="submit" value="Editar"><a onclick="closeInput" aria-label="Close">&#10006;</a>
+        <form action="javascript:void(0);" method="POST" id="saveEdit" >
+            <input type="text" id="edit-name" >
+            <input type="submit" value="Editar"><a onclick="app.closeInput()" aria-label="Close">&#10006;</a>
         </form>
     </div>
 
@@ -88,6 +90,25 @@
                     this.fetchAll();
                 }
 
+            }
+
+            this.Edit = function(indice){
+                el = document.getElementById('spoiler');
+                el.style = 'display: block';
+                input = document.getElementById('edit-name')
+                input.value = this.counters[indice];
+            }
+
+            this.closeInput = function(){
+                el = document.getElementById('spoiler');
+                el.style = 'display: none;';
+                input = document.getElementById('edit-name')
+                input.value = '';
+            }
+
+            this.Delete = function(indice){
+                this.counters.splice(indice,1);
+                this.fetchAll()
             }
             
         }

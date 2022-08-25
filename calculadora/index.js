@@ -56,9 +56,11 @@ function apagaCaracter(){
 
 function historico(){
   let resultado = '';
-  resultado += guardaHistorico[guardaHistorico.length - 1] + '<br>' + guardaHistorico[guardaHistorico.length - 2] + '<br>';
-  document.getElementById('display').innerHTML = resultado;
-  salvar()
+  if(guardaHistorico.length > 1){
+    resultado += guardaHistorico[guardaHistorico.length - 1] + '<br>' + guardaHistorico[guardaHistorico.length - 2] + '<br>';
+    document.getElementById('display').innerHTML = resultado;
+    salvar()
+  }
 }
 
 function salvar(){
