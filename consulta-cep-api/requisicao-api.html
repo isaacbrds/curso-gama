@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta Cep API</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <form action="javascript:void(0);">
+    <label for="nomeCliente"> Nome do Cliente</label>
+    <input type="text" name="nomeCliente" id="nomeCliente">
+    <label for="cep"> Entre com o cep a ser consultado</label>
+    <input type="text" id="inputCep" name="cep">
+    <button onclick="buscaCep()"> PROCESSAR </button>
+    <button onclick="limpaCampos()"> LIMPAR </button>
+  </form>
+  
+  <p id="resposta">
+    <label for="endereco"> Endereço</label>
+    <input type="text" id="endereco" name="endereco">
+    <br>
+    <label for="bairro"> Bairro</label>
+    <input type="text" id="bairro" name="bairro">
+    <br>
+    <label for="cep"> Cep</label>
+    <input type="text" id="cep" name="cep">
+    <br>
+    <label for="estado"> Estado</label>
+    <input type="text" id="estado" name="estado">
+    <br>
+    <label for="cidade"> Cidade</label>
+    <input type="text" id="cidade" name="cidade">
+  </p>
+
+  <script src="./main.js"></script>
+
+</body>
+</html>

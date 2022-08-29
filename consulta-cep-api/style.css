@@ -1,0 +1,13 @@
+form{
+  width: 100%;
+  background-color: #464646;
+}
+
+#resposta{
+  width: 100%;
+}
+
+#resposta input[type="text"]{
+  width: 80%;
+  margin: 10px;
+}
