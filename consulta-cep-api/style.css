@@ -1,6 +1,10 @@
 form{
   width: 100%;
-  background-color: #464646;
+}
+
+button{
+  background-color: rgb(104, 101, 101);
+  color: white;
 }
 
 #resposta{
