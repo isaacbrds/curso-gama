@@ -1,0 +1,17 @@
+form{
+  width: 100%;
+}
+
+button{
+  background-color: rgb(104, 101, 101);
+  color: white;
+}
+
+#resposta{
+  width: 100%;
+}
+
+#resposta input[type="text"]{
+  width: 80%;
+  margin: 10px;
+}
