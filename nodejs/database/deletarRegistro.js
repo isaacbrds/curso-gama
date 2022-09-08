@@ -14,10 +14,9 @@ conexao.connect(function(err){
     console.log('conectado!');
     
     
-        conexao.query('select * from consumidores', function(err, result){
+        conexao.query("delete from consumidores where nome_consumidor='Rita'", function(err, result){
             if(err) throw err;
             console.log(result);
-            console.log('Lendo os dados com sucesso!')
         })
 
     
