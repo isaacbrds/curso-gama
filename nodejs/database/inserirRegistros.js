@@ -11,9 +11,9 @@ conexao.connect(function(err){
     if(err) throw err;
 
     console.log('conectado!');
-    let sql = "create table consumidores (nome_consumidor varchar(50), endereco varchar(100))";
+    let sql = "insert into consumidores values('Isaac', 'Nossa Senhora de Fatima, 221')";
     conexao.query(sql, function(err, result){
         if(err) throw err;
-        console.log('Tabela criada com sucesso!')
+        console.log('Inserindo dados com sucesso!')
     })
 });
