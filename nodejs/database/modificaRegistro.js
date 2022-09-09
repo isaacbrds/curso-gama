@@ -17,7 +17,7 @@ conexao.connect(function(err){
 
     conexao.query(sql, function(err, result){
         if(err) throw err;
-        console.log(result);
+        console.log(result.affectedRows + 'Registro Modificado');
     })
 
 });
