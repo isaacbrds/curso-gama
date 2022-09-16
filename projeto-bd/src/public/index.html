@@ -85,7 +85,8 @@
       const form = document.getElementById('form')
       .addEventListener('submit', function(e){
         e.preventDefault();
-        fetch.post('localhost:3000/alunos/')
+        const aluno  = 
+        fetch('localhost:3000/alunos/')
         .then(res=>{
           res.json();
         })
