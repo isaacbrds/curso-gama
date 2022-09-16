@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Banco de Dados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h3 class="text-center">Alunos</h3>
+    <table class="table">
+      <thead>
+        <th>Nome</th>
+        <th>Email</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aluno</td>
+          <td>Email@</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    
+      <h3 class="text-center mb-3 ">Adicionar Aluno</h3>
+        <form action="" id="form">
+        <div class="row">
+            <div class="col">
+              <label for="nome">Nome: </label>
+              <input type="text" name="nome" id="nome" placeholder="Digite o nome do aluno" class="form-control"/>
+            </div>
+            <div class="col">
+              <label for="email">Email: </label>
+              <input type="text" name="email" id="email" placeholder="Digite o email do aluno" class="form-control"/>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="telefone">telefone: </label>
+              <input type="text" name="telefone" id="telefone" placeholder="Digite o telefone do aluno" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="idade">idade: </label>
+            <input type="text" name="idade" id="idade" placeholder="Digite o idade do aluno" class="form-control"/>
+          </div>
+          <div class="col">
+            <label for="genero">genero: </label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Selecione seu gênero</option>
+              <option value="1">Homem Cis</option>
+              <option value="2">Mulher Cis</option>
+              <option value="3">Homem Trans</option>
+              <option value="4">Mulher Trans</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="estudante">Estudante: </label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="estudante" id="estudanteSim">
+              <label class="form-check-label" for="estudanteSim">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="estudante" id="estudanteNao">
+              <label class="form-check-label" for="">
+                Não
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <button class="btn btn-primary">Enviar</button>
+        </div>
+        
+      </form>
+    
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      const form = document.getElementById('form')
+      .addEventListener('submit', function(e){
+        e.preventDefault();
+        fetch.post('localhost:3000/alunos/')
+        .then(res=>{
+          res.json();
+        })
+      })
+    </script>
+</body>
+
+</html>
+
